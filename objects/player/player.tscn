@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://c83cdhl3nfi2o"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://ct0ugdwhbo0q" path="res://objects/player/Character Basic Template Unoutlined.png" id="1_cqmt1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayypw"]
+=======
+[ext_resource type="Script" uid="uid://b1lrkmd2hck0c" path="res://objects/player/player_script.gd" id="1_cqmt1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cqmt1"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7ett"]
 atlas = ExtResource("1_cqmt1")
@@ -242,10 +248,17 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=49678140]
+script = ExtResource("1_cqmt1")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=261007128]
-shape = SubResource("RectangleShape2D_ayypw")
+shape = SubResource("CapsuleShape2D_cqmt1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=965024445]
+<<<<<<< Updated upstream
 sprite_frames = SubResource("SpriteFrames_blm7h")
 animation = &"run_up"
+=======
+sprite_frames = SubResource("SpriteFrames_lftce")
+animation = &"move_down"
+autoplay = "idle_down"
+>>>>>>> Stashed changes
