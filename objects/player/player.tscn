@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://b1lrkmd2hck0c" path="res://objects/player/player_script.gd" id="1_cqmt1"]
 [ext_resource type="Texture2D" uid="uid://ct0ugdwhbo0q" path="res://objects/player/Character Basic Template Unoutlined.png" id="2_g7ett"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqvt8"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnkmh"]
 radius = 11.0
-height = 34.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7ett"]
 atlas = ExtResource("2_g7ett")
@@ -248,9 +247,9 @@ animations = [{
 script = ExtResource("1_cqmt1")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=261007128]
-shape = SubResource("CapsuleShape2D_tqvt8")
+shape = SubResource("CircleShape2D_gnkmh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=965024445]
-position = Vector2(0, -12)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_blm7h")
 animation = &"run_up"

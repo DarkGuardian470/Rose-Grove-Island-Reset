@@ -19,9 +19,19 @@ enum SpriteFacing {
 
 # PlayerState, SpriteFacing -> Animation
 const ANIMATIONS = [
-	["idle_up", "idle_right", "idle_down"],
-	["walk_up", "walk_right", "walk_down"],
-	[ "run_up",  "run_right",  "run_down"],
+	[
+		StringName("idle_up"   ),
+		StringName("idle_right"),
+		StringName("idle_down" ),
+	],[
+		StringName("walk_up"   ),
+		StringName("walk_right"),
+		StringName("walk_down" ),
+	],[
+		StringName( "run_up"   ),
+		StringName( "run_right"),
+		StringName( "run_down" ),
+	],
 ]
 var current_state: PlayerState  = PlayerState.IDLE
 var sprite_facing: SpriteFacing = SpriteFacing.DOWN
@@ -60,7 +70,7 @@ func animate_movement() -> void:
 			sprite.flip_h = true
 	
 	# Then
-	sprite.play(ANIMATIONS[PlayerState.WALK if SPEED_RUN else PlayerState.WALK])
+	sprite.play(ANIMATIONS[PlayerState.WALK if SPEED_RUN else PlayerState.WALK][sprite_facing])
 
 func _physics_process(delta: float) -> void:
 	get_inputs(delta)
