@@ -1,79 +1,82 @@
 [gd_scene format=3 uid="uid://c83cdhl3nfi2o"]
 
-[ext_resource type="Texture2D" uid="uid://ct0ugdwhbo0q" path="res://objects/player/Character Basic Template Unoutlined.png" id="1_cqmt1"]
+[ext_resource type="Script" uid="uid://b1lrkmd2hck0c" path="res://objects/player/player_script.gd" id="1_cqmt1"]
+[ext_resource type="Texture2D" uid="uid://ct0ugdwhbo0q" path="res://objects/player/Character Basic Template Unoutlined.png" id="2_g7ett"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayypw"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqvt8"]
+radius = 11.0
+height = 34.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7ett"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ssrue"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(0, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnjyq"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(0, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gnkmh"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xkryw"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ow0dq"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4kly"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgwla"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi5m7"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(32, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psowp"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(96, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45urx"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(0, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c34wb"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(64, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45rsp"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(128, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylcck"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(32, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5bgp"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(96, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dthqj"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(0, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xlkbi"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(64, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l55sg"]
-atlas = ExtResource("1_cqmt1")
+atlas = ExtResource("2_g7ett")
 region = Rect2(128, 128, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blm7h"]
@@ -242,10 +245,12 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=49678140]
+script = ExtResource("1_cqmt1")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=261007128]
-shape = SubResource("RectangleShape2D_ayypw")
+shape = SubResource("CapsuleShape2D_tqvt8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=965024445]
+position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_blm7h")
 animation = &"run_up"
